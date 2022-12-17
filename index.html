@@ -1,4 +1,5 @@
-
+<title>Cube</title>
+<link rel="icon" href="turioface.png">
 <div class="Text">
     Q = Front Face<br>
     W = Top Face<br>
@@ -142,7 +143,7 @@ function rotateCube(event) {
   } else if (event.key === 'e') {
     cube.style.transform = 'rotateY(180deg)';
     document.getElementById("bottom").style.boxShadow = "0px 0px 0px 0px black";
-  } else if (event.key = 'keyup') {
+  } else if (event.key = 'UpArrow') {
     cube.style.transform = 'rotateY(45deg) rotateZ(-10deg) rotateX(-10deg)';
     document.getElementById("bottom").style.boxShadow = "0px 0px 100px 10px black";
   }
