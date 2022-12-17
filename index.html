@@ -1,0 +1,153 @@
+
+<div class="Text">
+    Q = Front Face<br>
+    W = Top Face<br>
+    E = Back Face<br>
+    A = Left Face<br>
+    S = Bottom Face<br>
+    D = Right Face <br>
+    Arrow Key= Multiple Faces
+</div>
+
+<div class="cubed">
+   <div class="cube">
+    <div class="face front"></div>
+    <div class="face back"></div>
+    <div class="face right"></div>
+    <div class="face left" id="left"></div>
+    <div class="face top"></div>
+    <div class="face bottom" id="bottom"></div>
+    <div class="body body"></div>
+  </div> 
+</div>
+
+
+<style>
+    .text {
+        position: absolute;
+        font-family: sans-serif;
+        color: rgba(0, 0, 0, 0.323);
+        font-size: larger;
+    }
+    .cubed {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    .cube {
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+  
+}
+.body {
+  width: 200px;
+  height: 150px;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+}
+
+.face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  
+}
+.front {
+  transform: rotateY(0deg) translateZ(100px);
+  background-image: url(turioface.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  image-rendering: pixelated;
+}
+
+.back {
+  transform: rotateY(180deg) translateZ(100px);
+  background-image: url(turioback.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  image-rendering: pixelated;
+}
+
+.right {
+  transform: rotateY(90deg) translateZ(100px);
+  background-image: url(turioside.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  image-rendering: pixelated;
+}
+
+.left {
+  transform: rotateY(-90deg) translateZ(100px);
+  background-image: url(turioside2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  image-rendering: pixelated;
+}
+
+.top {
+  transform: rotateX(90deg) translateZ(100px);
+  background-image: url(turiotop.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  image-rendering: pixelated;
+}
+
+.bottom {
+  transform: rotateX(-90deg) translateZ(100px);
+  background-image: url(turiobottom.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  image-rendering: pixelated;
+  box-shadow: 0px 0px 0px 0px black;
+}
+.body {
+  transform: rotateX(-90deg) translateZ(1px);
+  background-image: url(turiobottom.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  image-rendering: pixelated;
+}
+@keyframes spin {
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(360deg);
+  }
+}
+</style>  
+<script>
+    const cube = document.querySelector('.cube');
+
+function rotateCube(event) {
+  if (event.key === 'w') {
+    cube.style.transform = 'rotateX(-90deg)';
+    document.getElementById("bottom").style.boxShadow = "0px 0px 0px 0px black";
+  } else if (event.key === 's') {
+    cube.style.transform = 'rotateX(90deg)';
+    document.getElementById("bottom").style.boxShadow = "0px 0px 0px 0px black";
+  } else if (event.key === 'd') {
+    cube.style.transform = 'rotateY(-90deg)';
+    document.getElementById("bottom").style.boxShadow = "0px 0px 0px 0px black";
+  } else if (event.key === 'a') {
+    cube.style.transform = 'rotateY(90deg)';
+    document.getElementById("bottom").style.boxShadow = "0px 0px 0px 0px black";
+  } else if (event.key === 'q') {
+    cube.style.transform = 'rotateY(0deg)';
+    document.getElementById("bottom").style.boxShadow = "0px 0px 0px 0px black";
+  } else if (event.key === 'e') {
+    cube.style.transform = 'rotateY(180deg)';
+    document.getElementById("bottom").style.boxShadow = "0px 0px 0px 0px black";
+  } else if (event.key = 'keyup') {
+    cube.style.transform = 'rotateY(45deg) rotateZ(-10deg) rotateX(-10deg)';
+    document.getElementById("bottom").style.boxShadow = "0px 0px 100px 10px black";
+  }
+}
+
+document.addEventListener('keydown', rotateCube);
+
+</script>
