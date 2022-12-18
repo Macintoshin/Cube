@@ -1,3 +1,4 @@
+
 <title>Cube</title>
 <link rel="icon" href="turioface.png">
 <div id="Text">
@@ -21,6 +22,7 @@
     <div class="face top"></div>
     <div class="face bottom" id="bottom"></div>
     <div class="body body"></div>
+    </div>
   </div> 
 </div>
 
@@ -59,12 +61,14 @@
         justify-content: center;
         align-items: center;
         height: 100%;
+        transition: all 200ms;
     }
     .cube {
   width: 200px;
   height: 200px;
   transform-style: preserve-3d;
   transition: all 0.5s ease;
+  transition: all 400ms;
   
 }
 .body {
@@ -127,6 +131,7 @@
   background-size: cover;
   image-rendering: pixelated;
   box-shadow: 0px 0px 0px 0px black;
+  transition: all 450ms;
 }
 .body {
   transform: rotateX(-90deg) translateZ(1px);
