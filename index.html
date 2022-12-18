@@ -1,14 +1,16 @@
 <title>Cube</title>
 <link rel="icon" href="turioface.png">
-<div class="Text">
+<div id="Text">
     Q = Front Face<br>
     W = Top Face<br>
     E = Back Face<br>
     A = Left Face<br>
     S = Bottom Face<br>
     D = Right Face <br>
-    R = Multiple Faces
+    R = Multiple Faces<br>
+    <button onclick="hideWindow()">close</button>
 </div>
+<div id="ShowButton"><button onclick="hideWindow()">show</button></div>
 
 <div class="cubed">
    <div class="cube">
@@ -24,11 +26,33 @@
 
 
 <style>
-    .text {
+    #text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background-color: rgba(0, 0, 0, 0.087);
+      padding: 1vmin;
+      border-radius: 2vmin;
         position: absolute;
         font-family: sans-serif;
-        color: rgba(0, 0, 0, 0.323);
+        color: rgba(0, 0, 0, 0.362);
         font-size: larger;
+        gap: 2vmin;
+    }
+    #ShowButton {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      border: none;
+      background-color: rgba(0, 0, 0, 0.189);
+      border-radius: 2vmin;
+        position: absolute;
+        font-family: sans-serif;
+        color: rgb(255, 255, 255);
+        font-size: larger;
+        gap: 2vmin;
     }
     .cubed {
         display: flex;
@@ -150,5 +174,19 @@ function rotateCube(event) {
 }
 
 document.addEventListener('keydown', rotateCube);
+function hideWindow() {
+  var x = document.getElementById("Text");
+  if (x.style.display === "none") {
+    x.style.display = "flex";
+  } else {
+    x.style.display = "none";
+  }
+  var x = document.getElementById("ShowButton");
+  if (x.style.display === "flex") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "flex";
+  }
+}
 
 </script>
