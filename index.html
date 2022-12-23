@@ -1,6 +1,7 @@
 
 <title>Cube</title>
 <link rel="icon" href="turioface.png">
+<html id="html">
 <div id="Text">
     Q = Front Face<br>
     W = Top Face<br>
@@ -12,6 +13,8 @@
     <button onclick="hideWindow()">close</button>
 </div>
 <div id="ShowButton"><button onclick="hideWindow()">show</button></div>
+<div id="ToggleThemeDark"><button onclick="toggleThemedark()">Toggle Dark</button></div>
+<div id="ToggleThemeWhite"><button onclick="toggleThemewhite()">Toggle White</button></div>
 
 <div class="cubed">
    <div class="cube">
@@ -25,9 +28,13 @@
     </div>
   </div> 
 </div>
+</html>
 
 
 <style>
+  html {
+    transition: ease-in-out 300ms;
+  }
     #text {
       display: flex;
       align-items: center;
@@ -55,6 +62,16 @@
         color: rgb(255, 255, 255);
         font-size: larger;
         gap: 2vmin;
+    }
+    #ToggleThemedark {
+      visibility: visible;
+      position: absolute;
+      right: 5px;
+    }
+    #ToggleThemewhite {
+      visibility: hidden;
+      position: absolute;
+      right: 5px;
     }
     .cubed {
         display: flex;
@@ -192,6 +209,18 @@ function hideWindow() {
   } else {
     x.style.display = "flex";
   }
+}
+function toggleThemedark() {
+  document.getElementById("html").style.backgroundColor = "rgb(31, 31, 31)";
+  document.getElementById("Text").style.color = "rgb(141, 141, 141)";
+  document.getElementById("ToggleThemeDark").style.visibility = "hidden"
+  document.getElementById("ToggleThemeWhite").style.visibility = "visible"
+}
+function toggleThemewhite() {
+  document.getElementById("html").style.backgroundColor = "white";
+  document.getElementById("Text").style.color = "rgba(0, 0, 0, 0.362);";
+  document.getElementById("ToggleThemeDark").style.visibility = "visible"
+  document.getElementById("ToggleThemeWhite").style.visibility = "hidden"
 }
 
 </script>
