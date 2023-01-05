@@ -45,6 +45,7 @@ function toggleThemedark() {
   document.getElementById("Text").style.color = " rgba(0, 0, 0, 0.362);";
   document.getElementById("ToggleThemeDark").style.visibility = "visible"
   document.getElementById("ToggleThemeWhite").style.visibility = "hidden"
+  document.getElementById("ShowButton").style.color = "rgba(0, 0, 0, 0.362);";
 }
 function toggleThemewhite() {
   document.getElementById("html").style.backgroundColor = "white";

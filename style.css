@@ -92,7 +92,11 @@
   background-size: cover;
   image-rendering: pixelated;
 }
-
+button {
+  border: none;
+  border-radius: 2px;
+  border: solid 1px black;
+}
 .left {
   transform: rotateY(-90deg) translateZ(100px);
   background-image: url(turioside2.png);
