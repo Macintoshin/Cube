@@ -21,6 +21,7 @@ function rotateCube(event) {
     document.getElementById("bottom").style.boxShadow = "0px 0px 0px 0px black";
   } else if (event.key === 'r') {
     cube.style.transform = 'rotateY(45deg) rotateZ(-10deg) rotateX(-10deg)';
+    document.getElementById("bottom").style.boxShadow = "0px 0px 100px 10px black";
   }
 }
 
